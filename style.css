@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 1100px;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background: #080d13 url("assets/space-bg.png")
+              center center / cover no-repeat;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.brand {
+  position: absolute;
+  top: 22px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  stroke-width: 0.8;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 540px 340px;
+  align-items: start;
+  gap: 60px;
+  width: 940px;
+  margin: 0 auto;
+  padding: 145px 0 80px;
+}
+
+.intro {
+  padding-top: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.38;
+}
+
+.intro h1 span {
+  color: #59dfe5;
+}
+
+.tagline {
+  margin: 0 0 24px;
+  font-size: 11px;
+  line-height: 1.6;
+  font-weight: 800;
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.login-panel {
+  position: relative;
+  left: 40px;
+  margin-top: 20px;
+  padding: 20px 19px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 32px;
+  background: rgba(0, 0, 0, 0.43);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.login-panel h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 0 0 15px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  margin-bottom: 14px;
+  padding: 0 10px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.field > svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.4;
+}
+
+.field input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field input::placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+
+.field:focus-within {
+  border-color: #59dfe5;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 16px 0;
+  font-size: 12px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.remember input {
+  appearance: none;
+  width: 23px;
+  height: 23px;
+  margin: 0;
+  border: 2px solid #85898b;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.remember input:checked {
+  background: #59dfe5;
+  border-color: #59dfe5;
+}
+
+.remember input:checked::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 11px;
+  margin: 2px 0 0 6px;
+  border-right: 2px solid #071c20;
+  border-bottom: 2px solid #071c20;
+  transform: rotate(45deg);
+}
+
+.text-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 42px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 10px;
+  background: #59dfe5;
+  color: #06191d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.login-button:hover {
+  background: #80edf1;
+}
+
+.divider {
+  margin: 7px 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 39px;
+  padding: 0 12px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.google-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.google-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.signup-copy {
+  margin: 13px 0 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.signup-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: inherit;
+  font-weight: 800;
+}
+
+.signup-button:hover,
+.text-button:hover {
+  color: #59dfe5;
+}
+
+button:focus-visible,
+.remember input:focus-visible {
+  outline: 2px solid #59dfe5;
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Decorative planets behind the page content */
+.planets {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.planets img {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+
+/* Mars sits behind the Moon */
+.mars {
+  width: 300px;
+  height: 300px;
+  top: 50px;
+  right: 110px;
+  z-index: 1;
+}
+
+/* Moon overlaps Mars and sits behind the login panel */
+.moon {
+  width: 400px;
+  height: 400px;
+  top: 20px;
+  right: 230px;
+  z-index: 2;
+}
+
+.brand,
+.layout {
+  position: relative;
+  z-index: 1;
+}
+
+/* Preserve the existing logo position */
+.brand {
+  position: absolute;
+}
