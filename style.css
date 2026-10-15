@@ -3,12 +3,13 @@
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  color: #ffffff;
-  background: #080d13 url("assets/space-bg.png")
-              center center / cover no-repeat;
+  color: #fff;
+  background: #080d13 url("assets/space-bg.png") center / cover no-repeat;
 }
 
 button,
@@ -20,10 +21,13 @@ button {
   cursor: pointer;
 }
 
+/* Logo */
+
 .brand {
   position: absolute;
   top: 22px;
   left: 40px;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -37,17 +41,21 @@ button {
   stroke-width: 0.8;
 }
 
+/* Main content */
+
 .layout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 540px) 340px;
   align-items: start;
   gap: 60px;
   width: min(980px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 100px 40px 24px 0;
+  padding: clamp(70px, 12vh, 100px) 40px 16px 0;
 }
+
 .intro {
-  padding-top: 0;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -65,16 +73,18 @@ button {
 .tagline {
   margin: 0 0 24px;
   font-size: 11px;
-  line-height: 1.6;
   font-weight: 800;
+  line-height: 1.6;
 }
 
 .description {
   margin: 0;
   font-size: 14px;
-  line-height: 1.45;
   font-weight: 700;
+  line-height: 1.45;
 }
+
+/* Login form */
 
 .login-panel {
   position: relative;
@@ -90,8 +100,8 @@ button {
 .login-panel h2 {
   margin: 0 0 8px;
   font-size: 21px;
-  line-height: 1.3;
   font-weight: 800;
+  line-height: 1.3;
 }
 
 .subtitle {
@@ -127,19 +137,21 @@ button {
   border: 0;
   outline: none;
   background: transparent;
-  color: #ffffff;
+  color: #fff;
   font-size: 13px;
   font-weight: 600;
 }
 
 .field input::placeholder {
-  color: #cccccc;
+  color: #ccc;
   opacity: 1;
 }
 
 .field:focus-within {
   border-color: #59dfe5;
 }
+
+/* Remember me and password link */
 
 .options {
   display: flex;
@@ -154,8 +166,8 @@ button {
   display: flex;
   align-items: center;
   gap: 6px;
-  white-space: nowrap;
   font-weight: 700;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -171,8 +183,8 @@ button {
 }
 
 .remember input:checked {
-  background: #59dfe5;
   border-color: #59dfe5;
+  background: #59dfe5;
 }
 
 .remember input:checked::after {
@@ -186,11 +198,15 @@ button {
   transform: rotate(45deg);
 }
 
-.text-button {
+.text-button,
+.signup-button {
   padding: 0;
   border: 0;
   background: transparent;
-  color: #ffffff;
+  color: #fff;
+}
+
+.text-button {
   font-size: 12px;
   font-weight: 700;
   text-decoration: underline;
@@ -198,16 +214,22 @@ button {
   white-space: nowrap;
 }
 
-.login-button {
+/* Login buttons */
+
+.login-button,
+.google-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   width: 100%;
+  border-radius: 10px;
+}
+
+.login-button {
+  gap: 10px;
   height: 42px;
   padding: 0 15px;
   border: 0;
-  border-radius: 10px;
   background: #59dfe5;
   color: #06191d;
   font-size: 14px;
@@ -226,17 +248,12 @@ button {
 }
 
 .google-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
-  width: 100%;
   height: 39px;
   padding: 0 12px;
   border: 2px solid rgba(255, 255, 255, 0.55);
-  border-radius: 10px;
   background: rgba(0, 0, 0, 0.55);
-  color: #ffffff;
+  color: #fff;
   font-size: 11px;
   font-weight: 700;
 }
@@ -258,10 +275,6 @@ button {
 }
 
 .signup-button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #ffffff;
   font-size: inherit;
   font-weight: 800;
 }
@@ -270,6 +283,40 @@ button {
 .text-button:hover {
   color: #59dfe5;
 }
+
+/* Background planets */
+
+.planets {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.planets img {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+
+.mars {
+  top: 40px;
+  right: 110px;
+  z-index: 1;
+  width: 270px;
+  height: 270px;
+}
+
+.moon {
+  top: 0;
+  right: 230px;
+  z-index: 2;
+  width: 370px;
+  height: 370px;
+}
+
+/* Accessibility */
 
 button:focus-visible,
 .remember input:focus-visible {
@@ -286,51 +333,26 @@ button:focus-visible,
   clip-path: inset(50%);
   white-space: nowrap;
 }
-body {
-  position: relative;
-  isolation: isolate;
-}
 
-/* Decorative planets behind the page content */
-.planets {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: -1;
-}
+/* Smaller browser heights */
 
-.planets img {
-  position: absolute;
-  display: block;
-  object-fit: contain;
-}
+@media (max-height: 650px) {
+  .login-panel {
+    margin-top: 0;
+    padding: 16px;
+  }
 
-/* Mars sits behind the Moon */
-.mars {
-  width: 300px;
-  height: 300px;
-  top: 50px;
-  right: 110px;
-  z-index: 1;
-}
+  .field {
+    height: 36px;
+    margin-bottom: 10px;
+  }
 
-/* Moon overlaps Mars and sits behind the login panel */
-.moon {
-  width: 400px;
-  height: 400px;
-  top: 20px;
-  right: 230px;
-  z-index: 2;
-}
+  .options {
+    margin: 10px 0;
+  }
 
-.brand,
-.layout {
-  position: relative;
-  z-index: 1;
-}
-
-/* Preserve the existing logo position */
-.brand {
-  position: absolute;
+  .intro h1 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
 }
