@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-    /*vvbody {
+    body {
   position: relative;
   isolation: isolate;
   margin: 0;
@@ -10,23 +10,9 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   background: #080d13 url("assets/space-bg.png") center / cover no-repeat;
-}  */
+}  
 
- body {
-  min-height: 100vh;
-  min-height: 100svh;
-  background-color: #eef0f3;
-  background-image: url("assets/space-bg.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 
-@media (max-width: 760px) {
-  body {
-    background-position: center bottom;
-  }
-}
 
 button,
 input {
