@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
+    /*vvbody {
   position: relative;
   isolation: isolate;
   margin: 0;
@@ -10,6 +10,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   background: #080d13 url("assets/space-bg.png") center / cover no-repeat;
+}  */
+
+ body {
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: #eef0f3;
+  background-image: url("assets/space-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 760px) {
+  body {
+    background-position: center bottom;
+  }
 }
 
 button,
@@ -122,11 +138,11 @@ button {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.field > svg {
-  flex-shrink: 0;
+.field-icon {
   width: 24px;
   height: 24px;
-  stroke-width: 1.4;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .field input {
@@ -258,9 +274,11 @@ button {
   font-weight: 700;
 }
 
-.google-button svg {
+.google-logo {
   width: 20px;
   height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .google-button:hover {
