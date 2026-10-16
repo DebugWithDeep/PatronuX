@@ -360,3 +360,73 @@ button:focus-visible,
     line-height: 1.2;
   }
 }
+
+@media (max-width: 760px) {
+  body {
+    min-width: 0;
+    background-position: center bottom;
+  }
+
+  .brand {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 20px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    padding: 24px 0 48px;
+    gap: 28px;
+  }
+
+  .intro {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .intro h1 {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+
+  .tagline {
+    margin: 14px 0 18px;
+    line-height: 1.6;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .description br {
+    display: none;
+  }
+
+  .login-panel {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    max-width: 380px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 24px 18px;
+    justify-self: center;
+  }
+
+  .options {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .moon,
+  .mars {
+    opacity: 0.25;
+  }
+}
